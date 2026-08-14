@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Environment variables (never commit secrets)
+.env
+.env.local
+.env.*.local
+
+# Build output
+dist/
+build/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor / OS
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Raw source assets (already copied into client/public/)
+client/profile pic/
