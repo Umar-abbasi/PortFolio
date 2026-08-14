@@ -109,7 +109,7 @@ export default function About() {
         <div className="wrap">
           <div className="eyebrow reveal">My Journey</div>
           <h2 className="section-title reveal">How I got here</h2>
-          <div className="services-grid reveal" style={{ gridTemplateColumns: 'repeat(4,1fr)' }}>
+          <div className="services-grid reveal">
             {journey.map((j) => (
               <div className="service-card" key={j.title}>
                 <div className={`service-icon ${j.icon}`}>

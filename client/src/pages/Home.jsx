@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useReveal, useTilt } from '../lib/useReveal.js';
 import { api } from '../lib/api.js';
 import ProjectCard from '../components/ProjectCard.jsx';
+import CodingLaptop3D from '../components/CodingLaptop3D.jsx';
 
 export default function Home() {
   const [projects, setProjects] = useState([]);
@@ -58,15 +59,13 @@ export default function Home() {
 
             <div className="hero-visual reveal">
               <div className="glow-ring"></div>
-              <div className="device">
-                <div className="dots"><span></span><span></span><span></span></div>
-                <div className="code-line w1"></div>
-                <div className="code-line w2"></div>
-                <div className="code-line w3"></div>
-                <div className="code-line w4"></div>
-                <div className="code-line w5"></div>
-                <div className="code-line w2"></div>
-              </div>
+              <svg className="connector-lines" viewBox="0 0 600 480" preserveAspectRatio="none">
+                <line x1="300" y1="240" x2="9" y2="21" />
+                <line x1="300" y1="240" x2="605" y2="81" />
+                <line x1="300" y1="240" x2="10" y2="399" />
+                <line x1="300" y1="240" x2="589" y2="453" />
+              </svg>
+              <CodingLaptop3D />
               <div className="float-badge fb-1"><span className="fb-dot"></span>Odoo</div>
               <div className="float-badge fb-2"><span className="fb-dot"></span>SAP</div>
               <div className="float-badge fb-3"><span className="fb-dot"></span>Android</div>

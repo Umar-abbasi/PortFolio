@@ -156,41 +156,45 @@ export default function AdminDashboard() {
           </form>
 
           <h3 style={{ marginBottom: '16px' }}>Projects</h3>
-          <table className="admin-table" style={{ marginBottom: '40px' }}>
-            <thead>
-              <tr><th>Title</th><th>Category</th><th>Status</th><th>Actions</th></tr>
-            </thead>
-            <tbody>
-              {projects.map((p) => (
-                <tr key={p.id}>
-                  <td>{p.title}</td>
-                  <td>{p.category}</td>
-                  <td>{p.status}</td>
-                  <td className="admin-actions">
-                    <button onClick={() => startEdit(p)}>Edit</button>
-                    <button onClick={() => remove(p.id)}>Delete</button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          <div className="table-scroll" style={{ marginBottom: '40px' }}>
+            <table className="admin-table">
+              <thead>
+                <tr><th>Title</th><th>Category</th><th>Status</th><th>Actions</th></tr>
+              </thead>
+              <tbody>
+                {projects.map((p) => (
+                  <tr key={p.id}>
+                    <td>{p.title}</td>
+                    <td>{p.category}</td>
+                    <td>{p.status}</td>
+                    <td className="admin-actions">
+                      <button onClick={() => startEdit(p)}>Edit</button>
+                      <button onClick={() => remove(p.id)}>Delete</button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
 
           <h3 style={{ marginBottom: '16px' }}>Contact Messages</h3>
-          <table className="admin-table">
-            <thead>
-              <tr><th>Name</th><th>Email</th><th>Message</th><th>Received</th></tr>
-            </thead>
-            <tbody>
-              {messages.map((m) => (
-                <tr key={m.id}>
-                  <td>{m.name}</td>
-                  <td>{m.email}</td>
-                  <td>{m.message}</td>
-                  <td>{new Date(m.created_at).toLocaleString()}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          <div className="table-scroll">
+            <table className="admin-table">
+              <thead>
+                <tr><th>Name</th><th>Email</th><th>Message</th><th>Received</th></tr>
+              </thead>
+              <tbody>
+                {messages.map((m) => (
+                  <tr key={m.id}>
+                    <td>{m.name}</td>
+                    <td>{m.email}</td>
+                    <td>{m.message}</td>
+                    <td>{new Date(m.created_at).toLocaleString()}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </section>
